@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import moment from "moment";
 import { Line } from "react-chartjs-2";
+import { NavLink } from "react-router-dom";
+
 class TableItem extends Component {
   state = {
     isStockRising: null,
@@ -24,24 +26,12 @@ class TableItem extends Component {
   render() {
     const { stock_name, stock_price, index, data_sets } = this.props;
     const { isStockRising, backgroundColor, lastUpdate, color } = this.state;
-    const data = {
-      datasets: [
-        {
-          label: stock_name,
-          pointHitRadius: 10,
-          data: data_sets
-        }
-      ]
-    };
-    /*<td>
-          <Line data={data} width={295} height={138} />
-        </td>*/ 
+  
     return (
       <tr>
-        <td>{stock_name}</td>
+        <td><NavLink to={`/${stock_name}`}>{stock_name}</NavLink></td>
         <td style={{ backgroundColor, color }}>{stock_price}</td>
         <td>{moment(lastUpdate).fromNow()}</td>
-        
       </tr>
     );
   }
