@@ -3,7 +3,6 @@ import logger from "redux-logger";
 
 import stocks from "./stockReducer.js";
 
-//you apply any middleware here
 const createStoreWithMiddleware = applyMiddleware(logger)(createStore);
 
 const store = combineReducers({
@@ -12,6 +11,6 @@ const store = combineReducers({
 
 export default createStoreWithMiddleware(
   store,
-  //you will need Redux Chrome Extension
+  //For Redux Chrome Extension
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );

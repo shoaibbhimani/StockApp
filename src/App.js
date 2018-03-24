@@ -4,10 +4,10 @@ import { connect } from "react-redux";
 
 import Table from "./Table";
 import Charts from "./Charts";
+import "./App.css";
 
 const mapStateToProps = state => {
   return {
-    stocks: state.stocks,
     isLoading: !!Object.keys(state.stocks).length
   };
 };
@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => {
   return {
     getData: data => {
       dispatch({
-        type: "NEW_UPATES",
+        type: "NEW_UPDATE",
         data: data
       });
     }
@@ -31,17 +31,16 @@ class App extends Component {
   getConnectionWithSocket = () => {
     const stocksSocket = new WebSocket("ws://stocks.mnet.website");
     stocksSocket.onmessage = event => {
-      var tickerTime = new Date();
       var data = JSON.parse(event.data);
       this.props.getData(data);
     };
   };
   render() {
-    const { stocks, isLoading } = this.props;
+    const { isLoading } = this.props;
     return (
       <div>
         {isLoading ? (
-          "loading"
+          <div>Loading....</div>
         ) : (
           <Switch>
             <Route exact path="/" component={Table} />
