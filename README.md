@@ -3,16 +3,16 @@
 ## Technology Used
 
 - React, Redux and React Router to create Single Page App.
-- Websocket is used to communicate between server and client.
 - Moment.js is used to calculate time.
 - Chart.js is used to show Graph of stock price.
-- styled-components to style React Components.
+- styled-components is used to style React Components.
+- Websocket is used to subscribe for updates.
 
-## How to used Start App Locally
+## How to start app Locally
 
-- Clone this repo git@github.com:shoaibbhimani/StockApp.git
-- yarn install to install all dependencies
-- yarn start to start development server
+- Clone this repo git@github.com:shoaibbhimani/StockApp.git.
+- run `yarn install` to install all dependencies.
+- run `yarn start` to start development server.
 
-Online Demo => shoaibbhimani.com
+[Online Demo](shoaibbhimani.com)
 

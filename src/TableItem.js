@@ -14,7 +14,7 @@ const GridItem = styled.section`
   padding: 17px;
   text-align: center;
   font-weight: 300;
-  font-size: 14px;
+  font-size: 16px;
 `;
 
 const Dot = styled.span`

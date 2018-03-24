@@ -26,6 +26,7 @@ const MenuItem = styled.section`
   width: 31.333%;
   padding: 7px;
   text-align: center;
+  font-size: 16px;
   background: white;
 `;
 
