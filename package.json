@@ -2,6 +2,7 @@
   "name": "media-stock-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/shoaibbhimani/StockApp",
   "dependencies": {
     "chart.js": "^2.7.2",
     "moment": "^2.21.0",
@@ -17,9 +18,14 @@
     "styled-components": "^3.2.3"
   },
   "scripts": {
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
   }
 }
