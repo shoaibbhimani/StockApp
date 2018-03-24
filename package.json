@@ -2,7 +2,7 @@
   "name": "media-stock-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/shoaibbhimani/StockApp",
+  "homepage": "https://shoaibbhimani.github.io/StockApp",
   "dependencies": {
     "chart.js": "^2.7.2",
     "moment": "^2.21.0",
