@@ -2,6 +2,7 @@
   "name": "media-stock-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://shoaibbhimani.com",
   "dependencies": {
     "chart.js": "^2.7.2",
     "gh-pages": "^1.1.0",
@@ -19,7 +20,7 @@
   },
   "scripts": {
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d master -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
