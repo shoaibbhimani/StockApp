@@ -11,7 +11,7 @@ const StockItemGrid = styled.section`
 const GridItem = styled.section`
   width: 29.333%;
   float: left;
-  padding: 17px;
+  padding: 2%;
   text-align: center;
   font-weight: 300;
   font-size: 16px;

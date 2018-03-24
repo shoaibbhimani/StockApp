@@ -5,13 +5,13 @@ import { Redirect, NavLink } from "react-router-dom";
 import styled from "styled-components";
 
 const ChartWrapper = styled.section`
-  width: 900px;
-  height: 450px;
+  width: 70%;
+  height: 40%;
   margin: 0 auto;
 `;
 
 const BackButton = styled(NavLink)`
-  display: inline-block;
+  display: block;
   padding: 4px;
   width: 120px;
   margin-top: 8px;
@@ -21,12 +21,18 @@ const BackButton = styled(NavLink)`
   text-decoration: none;
   background: #00a6ef;
   color: white;
+  @media screen and (max-width:840px){
+    margin: 8px auto;
+  }
 `;
 
 const CurrentPrice = styled.section`
   text-align: center;
   font-size: 21px;
   font-weight: 300;
+  @media screen and (max-width:840px){
+    font-size: 18px;
+  }
 `;
 
 const StockName = styled.section`
@@ -35,6 +41,9 @@ const StockName = styled.section`
   text-align: center;
   font-size: 42px;
   color: #1495ed;
+  @media screen and (max-width:840px){
+    font-size: 18px;
+  }
 `;
 
 const Icon = styled.span`

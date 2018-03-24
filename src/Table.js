@@ -24,7 +24,7 @@ const AppName = styled.section`
 const MenuItem = styled.section`
   float: left;
   width: 31.333%;
-  padding: 7px;
+  padding: 1%;
   text-align: center;
   font-size: 16px;
   background: white;
