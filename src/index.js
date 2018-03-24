@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 
 import store from "./store";
 
-//HashRouter is used to deploy app to netlify
+//HashRouter is used to deploy app to Github Pages
 ReactDOM.render(
   <Provider store={store}>
     <HashRouter>
