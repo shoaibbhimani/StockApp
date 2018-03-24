@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import moment from "moment";
-import { Line } from "react-chartjs-2";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import * as types from "prop-types";
@@ -25,10 +24,6 @@ const Dot = styled.span`
   background: ${props => props.color};
   border-radius: 50%;
   margin-right: 3px;
-`;
-
-const Icon = styled.span`
-  color: ${props => props.color};
 `;
 
 const Price = styled.span`

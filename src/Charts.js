@@ -12,7 +12,7 @@ const ChartWrapper = styled.section`
 
 const BackButton = styled(NavLink)`
   display: inline-block;
-  padding: 4px 4px;
+  padding: 4px;
   width: 120px;
   margin-top: 8px;
   font-weight: 300;
@@ -30,10 +30,10 @@ const CurrentPrice = styled.section`
 `;
 
 const StockName = styled.section`
+  margin-top: 7px;
   font-weight: 300;
   text-align: center;
   font-size: 42px;
-  margin-top: 7px;
   color: #1495ed;
 `;
 
@@ -75,7 +75,7 @@ class Charts extends Component {
           <Icon color={stock.backgroundColor}> {stock.icon} </Icon>
           {stock.price.toFixed(4)}
         </CurrentPrice>
-        <Line data={data} width={600} height={300} />
+        <Line data={data} />
       </ChartWrapper>
     );
   }
