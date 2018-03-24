@@ -1,53 +1,18 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { connect } from "react-redux";
 
 import TableItem from "./TableItem";
 
+const mapStateToProps = state => {
+  return {
+    stocks: state.stocks
+  };
+};
+
 class Table extends Component {
-  state = {
-    stocks: {},
-    stocksDatasets: {}
-  };
-
-  componentDidMount() {
-    this.getConnectionWithSocket();
-  }
-
-  getConnectionWithSocket = () => {
-    const stocksSocket = new WebSocket("ws://stocks.mnet.website");
-    stocksSocket.onmessage = event => {
-      const { stocks, stocksDatasets } = this.state;
-      var tickerTime = new Date();
-      var data = JSON.parse(event.data);
-
-      const new_stocks_list = {};
-      const new_stocks_data_sets = {...stocksDatasets};
-
-      data.forEach(datum => {
-        var tickerId = datum[0];
-        var tickerPrice = datum[1];
-        new_stocks_list[tickerId] = tickerPrice;
-
-        if (!new_stocks_data_sets[tickerId]) {
-          new_stocks_data_sets[tickerId] = [];
-        } else {
-          new_stocks_data_sets[tickerId] = new_stocks_data_sets[
-            tickerId
-          ].concat(tickerPrice);
-        }
-      });
-
-      this.setState({
-        stocks: { ...stocks, ...new_stocks_list },
-        stocksDatasets: { ...stocksDatasets, ...new_stocks_data_sets }
-      });
-    };
-  };
-
   render() {
-    const { stocks } = this.state;
-    const stockKeys = Object.keys(this.state.stocks);
+    const { stocks } = this.props;
+    const stockKeys = Object.keys(stocks);
     return (
       <section className="row">
         <div className="col-sm-8 col-sm-offset-2">
@@ -65,8 +30,7 @@ class Table extends Component {
                     key={stock}
                     index={index + 1}
                     stock_name={stock}
-                    stock_price={stocks[stock]}
-                    data_sets={stocks[stock]["data_sets"]}
+                    stock_price={stocks[stock]["price"]}
                   />
                 );
               })}
@@ -78,4 +42,4 @@ class Table extends Component {
   }
 }
 
-export default Table;
+export default connect(mapStateToProps)(Table);
