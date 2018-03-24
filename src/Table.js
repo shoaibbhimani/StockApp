@@ -45,7 +45,7 @@ class TableList extends Component {
         <AppName>(Live) Stocks App</AppName>
         <section>
           <Menu className="clearfix">
-            <MenuItem>Tricker</MenuItem> <MenuItem>Price</MenuItem>
+            <MenuItem>Ticker</MenuItem> <MenuItem>Price</MenuItem>
             <MenuItem>Last Updated</MenuItem>
           </Menu>
           <section>
